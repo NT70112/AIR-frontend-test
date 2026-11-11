@@ -1,0 +1,723 @@
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1530px;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+
+.button {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
+    padding: 13px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 45px;
+    background: #c3002f;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background: #8d0323;
+}
+
+
+/* ------------------------------------------------------------------------- */
+
+.Module-window {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+}
+
+.Module-window__container {
+    position: absolute;
+    z-index: 1;
+    width: max-content;
+    height: max-content;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
+    padding: 60px 60px 60px 60px;
+}
+
+
+.background {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.54);
+}
+
+.Module-window__title {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.875em;
+    line-height: 120%;
+    color: #151414;
+}
+
+.Module-window__description {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 140%;
+    text-align: center;
+    color: #4a4a4a;
+    max-width: 336px;
+    margin-top: 10px;
+}
+
+.Module-window__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.Module-window__form input {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 140%;
+    color: #151414;
+    width: 350px;
+    height: 44px;
+    border: 1px solid #151414;
+    padding: 20px 0 20px 20px;
+}
+
+.Module-window__form input::placeholder {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 140%;
+    color: #4a4a4a;
+}
+
+.Module-window__form div {
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 140%;
+    color: #4a4a4a;
+    max-width: 266px;
+    text-align: left;
+}
+
+.Module-window__form div a {
+    line-height: 120%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+.form-button {
+    margin: 0 auto;
+    pointer-events: none;
+    background-color: #4a4a4a;
+}
+
+.form-button--active {
+    pointer-events: auto;
+    background: #c3002f;
+}
+
+.error {
+    text-align: left;
+    color: #c3002f;
+}
+
+.close-form-button {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------- */
+
+.burger-container {
+    display: none;
+    position: static;
+    z-index: 20;
+}
+
+.burger-menu {
+    width: 300px;
+    height: max-content;
+    background-color: #ffffff;
+    position: absolute;
+    top: 52px;
+    left: 15px;
+    z-index: 2;
+    box-shadow: 0 0 6px 0px #15141481;
+    border-radius: 6px;
+    padding: 20px 0 20px 20px;
+}
+
+.burger {
+    background-color: #151414;
+    height: 3px;
+    width: 36px;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.burger::before {
+    content: '';
+    position: absolute;
+    background-color: #151414;
+    height: 3px;
+    width: 36px;
+    display: block;
+    top: -8px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.burger::after {
+    content: '';
+    position: absolute;
+    background-color: #151414;
+    height: 3px;
+    width: 36px;
+    display: block;
+    top: 8px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.burger--active {
+    background-color: transparent;
+}
+
+.burger--active::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.burger--active::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+.burger__nav {
+    margin-top: 20px;
+}
+
+.burger__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.burger-list-iteam {
+    white-space: nowrap;
+}
+
+.burger__phone-info {
+    margin-top: 40px;
+    display: none;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------ */
+
+
+.header {}
+
+.header-top {
+    margin-top: 30px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 1.125em;
+    line-height: 120%;
+}
+
+.header-top__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-right: 256px;
+}
+
+.header-top__nav {}
+
+.header-top__nav-list {
+    color: #151414;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header-top__nav-list-iteam {
+    white-space: nowrap;
+}
+
+.header-top__phone-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    white-space: nowrap;
+}
+
+.header-top__phone-info span {
+    color: #151414;
+    transform: translateY(5%);
+}
+
+.header-top__call-container {
+    display: flex;
+    gap: 30px;
+    margin-left: 186px;
+}
+
+.header-top__call-button {
+    font-size: 0.8889em;
+}
+
+/* ------------------------------------------------------------------------ */
+
+
+.banner {
+    position: relative;
+    margin-top: 49px;
+}
+
+.banner-inner {
+    width: 1530px;
+    height: 619px;
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 165px 130px;
+}
+
+.banner-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-title {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 3.75em;
+    line-height: 115%;
+    color: #fff;
+    max-width: 600px;
+}
+
+.banner-description {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 1.75em;
+    line-height: 120%;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.banner__call-button {
+    margin-top: 40px;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+.slider-examples {
+    margin-top: 100px;
+    margin-bottom: 130px;
+    width: 100%;
+}
+
+.container {}
+
+.slider-examples__title {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 110%;
+    color: #151414;
+}
+
+.slider-example__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto 0 auto;
+    overflow-x: clip;
+    position: relative;
+    height: max-content;
+}
+
+.slider-example__cards {
+    display: flex;
+    gap: 30px;
+    width: 1529px;
+    height: max-content;
+    position: relative;
+    transition: all 0.6s;
+}
+
+
+.slider-example__card {
+    position: relative;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.slider-example__card:hover {
+    transform: translateY(-1%);
+}
+
+.slider-example__card-info {
+    position: absolute;
+    display: block;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 226px;
+    height: 84px;
+    background-color: #C3002F;
+    align-content: center;
+    text-align: center;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-size: 1.125em;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
+}
+
+.slider-example__card img {
+    width: 360px;
+    height: 370px;
+}
+
+.slider-example__card-info {}
+
+
+.arrow-left {
+    position: absolute;
+    left: -100px;
+    background: none;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.arrow-rigth {
+    position: absolute;
+    right: -100px;
+    background: none;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.slider-example__conteiner {
+    margin: 0 auto;
+    position: relative;
+    width: max-content;
+}
+
+.arrow--disavled {
+    pointer-events: none;
+}
+
+
+/* --------------------------------------------------------------- */
+
+.footer {
+    background: #151414;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 102px;
+}
+
+.container {}
+
+.footer-inner {
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 120%;
+    font-variant: small-caps;
+    color: #dcdcdc;
+
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.footer-grid__column {
+    margin-top: 50px;
+}
+
+.footer-grid__column-title {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-size: 1.2857143em;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #dcdcdc;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.footer-grid__column-iteam {
+    margin-top: 10px;
+}
+
+.footer-grid__column:first-child a {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+.footer-grid__column:first-child .footer-grid__column-iteam:nth-child(4) {
+    margin-top: 20px;
+}
+
+.footer-grid__column__social-media {
+    display: flex;
+    gap: 15px;
+}
+
+@media(max-width: 1820px) {
+
+    .burger-container {
+        height: 26px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 0px;
+        display: none;
+    }
+
+
+    .header-top__nav {
+        display: none;
+    }
+
+    .footer-grid {
+        margin-left: 20px;
+    }
+
+    .banner-inner {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+    .slider-example__cards {
+        width: max-content;
+    }
+
+    .slider-examples__title {
+        text-align: center;
+    }
+
+    .slider-example__card img {
+        width: 720px;
+        height: 740px;
+    }
+
+    .slider-example__inner {
+        justify-content: start;
+        width: 720px;
+    }
+
+}
+
+
+@media(max-width: 1030px) {
+
+    .banner-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+    }
+
+    .banner-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner-title {
+        text-align: center;
+        font-size: 3em;
+        min-width: 200px;
+    }
+
+    .banner-description {
+        text-align: center;
+        min-width: 233px;
+    }
+
+    .slider-example__card img {
+        width: 360px;
+        height: 370px;
+    }
+
+    .slider-example__inner {
+        justify-content: start;
+        width: 360px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 630px) {
+
+    .banner-inner {
+        height: 500px;
+    }
+
+    .header-top__call-container {
+        margin-left: 20px;
+    }
+
+    .header-top__phone-info {
+        display: none;
+    }
+
+    .footer {
+        padding-bottom: 40px;
+    }
+
+    .footer-grid {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-grid__column__social-media {
+        justify-content: center;
+    }
+
+    .burger__phone-info {
+        display: block;
+    }
+
+    .banner-title,
+    .slider-examples__title {
+        font-size: 2.25em;
+    }
+
+    .banner-description {
+        font-size: 1.25em;
+    }
+
+    .slider-example__card img {
+        width: 280px;
+        height: 290px;
+    }
+
+    .slider-example__inner {
+        width: 280px;
+    }
+
+    .arrow-left {
+        left: -50px;
+    }
+
+    .arrow-rigth {
+        right: -50px;
+    }
+
+    .slider-example__card-info {
+        height: 60px;
+        width: 180px;
+    }
+
+    .Module-window__description {
+        max-width: 280px;
+    }
+
+    .Module-window__form input {
+        width: 300px;
+        padding: 20px 0 20px 20px;
+    }
+
+    .Module-window__container {
+        padding: 40px
+    }
+
+    .close-form-button {
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .slider-examples {
+        margin-top: 40px;
+    }
+
+}
+
+
+@media(max-width: 480px) {
+    .slider-example__card img {
+        width: 240px;
+        height: 250px;
+    }
+
+    .Module-window__form input {
+        width: 270px;
+        padding: 20px 0 20px 20px;
+    }
+
+    .slider-example__inner {
+        width: 240px;
+    }
+
+    .Module-window__container {
+        padding: 40px 25px 40px 25px;
+    }
+}
+
+.invisible {
+    display: none;
+}
